@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조선대학교 PUSH業 | 저학년 진로 시나리오</title>
+    <style>
+        :root {
+            --csu-blue: #0A2540;
+            --csu-orange: #FF6B00;
+            --csu-green: #00875A;
+            --bg-gray: #F4F6F9;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            border-bottom: 2px solid var(--csu-blue);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: var(--csu-blue);
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .header p {
+            color: #666;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .profile-sec {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: #F8FAFC;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            color: var(--csu-blue);
+            font-size: 15px;
+        }
+
+        input[type="text"], select, textarea {
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        input[type="text"]:focus, select:focus, textarea:focus {
+            border-color: var(--csu-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: var(--csu-blue);
+            border-left: 4px solid var(--csu-orange);
+            padding-left: 10px;
+            margin: 35px 0 20px 0;
+            font-weight: 700;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #F1F5F9;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .checkbox-label:hover {
+            background: #E2E8F0;
+        }
+
+        .checkbox-label input {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--csu-orange);
+        }
+
+        .road-map-box {
+            background: #FAF5FF;
+            border-left: 4px solid #8B5CF6;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+
+        .road-map-box.csu-green {
+            background: #F0FDF4;
+            border-left-color: var(--csu-green);
+        }
+
+        .road-map-box.csu-blue {
+            background: #F0F9FF;
+            border-left-color: var(--csu-blue);
+        }
+
+        .recommend-text {
+            font-size: 13px;
+            color: #666;
+            margin-top: 6px;
+            background: rgba(255,255,255,0.7);
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+
+        .vision-preview-box {
+            background: #FFF7ED;
+            border: 2px dashed var(--csu-orange);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .vision-text {
+            font-size: 18px;
+            font-weight: 700;
+            color: #C2410C;
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--csu-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #1E3A5F;
+        }
+
+        @media (max-width: 600px) {
+            .profile-sec { grid-template-columns: 1fr; }
+            .checkbox-group { grid-template-columns: repeat(2, 1fr); }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>[조선대학교 PUSH業] 진로 시나리오 리포트</h1>
+        <p>저학년 맞춤형 자기이해 및 미래 설계 워크숍</p>
+    </div>
+
+    <!-- 기본 정보 -->
+    <div class="profile-sec">
+        <div class="form-group" style="margin-bottom:0;">
+            <label for="userDept">학과</label>
+            <input type="text" id="userDept" placeholder="예: 컴퓨터공학과">
+        </div>
+        <div class="form-group" style="margin-bottom:0;">
+            <label for="userName">성명</label>
+            <input type="text" id="userName" placeholder="예: 홍길동">
+        </div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="section-title">STEP 1. My-Identity (나의 강점 정의)</div>
+    <div class="form-group">
+        <label>AI 도출 핵심 강점 (최대 2개 선택)</label>
+        <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="strength" value="소통력" onchange="updateVision()"> 소통력</label>
+            <label class="checkbox-label"><input type="checkbox" name="strength" value="분석력" onchange="updateVision()"> 분석력</label>
+            <label class="checkbox-label"><input type="checkbox" name="strength" value="추진력" onchange="updateVision()"> 추진력</label>
+            <label class="checkbox-label"><input type="checkbox" name="strength" value="문제해결력" onchange="updateVision()"> 문제해결력</label>
+            <label class="checkbox-label"><input type="checkbox" name="strength" value="협업능력" onchange="updateVision()"> 협업능력</label>
+            <label class="checkbox-label"><input type="checkbox" name="strength" value="기획력" onchange="updateVision()"> 기획력</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="episode">강점 증명 한 줄 에피소드</label>
+        <textarea id="episode" rows="2" placeholder="예시: 전공 조별 과제 당시 갈등을 중재하여 A+ 성과를 도출했던 경험이 있습니다."></textarea>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="section-title">STEP 2. Target-Setting (RISE 분야 및 직무)</div>
+    <div class="form-group">
+        <label for="riseTrack">관심 RISE 특성화 분야</label>
+        <select id="riseTrack" onchange="updateVision()">
+            <option value="">::: 선택하세요 :::</option>
+            <option value="메디헬스케어">메디헬스케어</option>
+            <option value="에너지">에너지</option>
+            <option value="스마트뿌리">스마트뿌리</option>
+            <option value="문화콘텐츠">문화콘텐츠</option>
+            <option value="인공지능">인공지능</option>
+            <option value="모빌리티">모빌리티</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="targetJob">희망 타깃 직무</label>
+        <input type="text" id="targetJob" placeholder="예시: 공정설비 엔지니어, SW 개발자" oninput="updateVision()">
+    </div>
+    <div class="form-group">
+        <label for="targetReason">선택 이유 (지역 인프라 및 가산점 연계)</label>
+        <textarea id="targetReason" rows="2" placeholder="예시: 나주 혁신도시 공공기관의 지역인재 의무채용 가산점을 활용해 에너지 공정 전문가로 성장하고 싶습니다."></textarea>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="section-title">STEP 3. Step-by-Step Road Map (학년별 실행 계획)</div>
+    
+    <div class="road-map-box">
+        <div class="form-group" style="margin-bottom:0;">
+            <label style="color:#6D28D9;">[2학년] 기초 역량 빌딩 계획</label>
+            <input type="text" id="plan2" placeholder="나의 주도적 실천 계획을 입력하세요.">
+            <div class="recommend-text">💡 <b>교내 추천 인프라:</b> 학과 전공 심화 로드맵 확인, 교내 진로 탐색 비교과 프로그램 활발히 참여</div>
+        </div>
+    </div>
+
+    <div class="road-map-box csu-green">
+        <div class="form-group" style="margin-bottom:0;">
+            <label style="color:var(--csu-green);">[3학년] 직무 고도화 및 인프라 매칭 계획</label>
+            <input type="text" id="plan3" placeholder="나의 주도적 실천 계획을 입력하세요.">
+            <div class="recommend-text">💡 <b>교내 추천 인프라:</b> 대학일자리플러스센터 정기 상담 등록, RISE 연계 캡스톤 디자인 참여</div>
+        </div>
+    </div>
+
+    <div class="road-map-box csu-blue">
+        <div class="form-group" style="margin-bottom:0;">
+            <label style="color:var(--csu-blue);">[4학년] 실전 취업 연계 계획</label>
+            <input type="text" id="plan4" placeholder="나의 주도적 실천 계획을 입력하세요.">
+            <div class="recommend-text">💡 <b>교내 추천 인프라:</b> 장기 현장실습(IPP) 참여, AI 자소서·면접 솔루션 상시 고도화 및 추천 채용 연계</div>
+        </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="section-title">STEP 4. Vision Statement (조선인 비전 선포문)</div>
+    <div class="vision-preview-box">
+        <div class="vision-text" id="visionOutput">
+            "나는 <span style="color:#EF4444; border-bottom:2px solid;">[나의 강점]</span>을 가진 인재로서,<br>
+            졸업 후 <span style="color:#EF4444; border-bottom:2px solid;">[타깃 산업/직무]</span> 부문에서<br>
+            <span style="color:#EF4444; border-bottom:2px solid;">[달성하고 싶은 가치]</span>를 실현하는 대체 불가능한 전문가가 되겠습니다!"
+        </div>
+        <div class="form-group" style="margin-top:20px; text-align:left;">
+            <label for="finalValue" style="color:#C2410C;">내가 실현하고 싶은 최종 가치는 무엇인가요?</label>
+            <input type="text" id="finalValue" placeholder="예시: 지역 발전에 기여하는, 기술 혁신을 선도하는" oninput="updateVision()">
+        </div>
+    </div>
+
+    <button class="btn-submit" onclick="submitScenario()">진로 시나리오 최종 제출 및 저장</button>
+</div>
+
+<script>
+    // 입력 상태에 따라 비전 선포문 텍스트를 실시간으로 업데이트하는 함수
+    function updateVision() {
+        // 선택된 강점 체크박스 값 가져오기
+        const checkboxes = document.querySelectorAll('input[name="strength"]:checked');
+        let strengths = [];
+        checkboxes.forEach((cb) => strengths.push(cb.value));
+        const strengthText = strengths.length > 0 ? strengths.join('·') : '[나의 강점]';
+
+        // RISE 및 직무 텍스트 가져오기
+        const riseTrack = document.getElementById('riseTrack').value;
+        const targetJob = document.getElementById('targetJob').value;
+        let jobText = '[타깃 산업/직무]';
+        if(riseTrack || targetJob) {
+            jobText = `${riseTrack ? riseTrack : ''} ${targetJob ? targetJob : ''}`.trim();
+        }
+
+        // 최종 가치 가져오기
+        const finalValue = document.getElementById('finalValue').value;
+        const valueText = finalValue ? finalValue : '[달성하고 싶은 가치]';
+
+        // 템플릿 리터럴로 비전 실시간 렌더링
+        document.getElementById('visionOutput').innerHTML = `
+            "나는 <span style="color:#FF6B00; font-weight:800;">${strengthText}</span> 역량을 가진 인재로서,<br>
+            졸업 후 <span style="color:#0A2540; font-weight:800;">${jobText}</span> 부문에서<br>
+            <span style="color:#00875A; font-weight:800;">${valueText}</span> 환경을 실현하는 대체 불가능한 전문가가 되겠습니다!"
+        `;
+    }
+
+    // 제출 버튼 클릭 시 알림 및 데이터 검증 함수
+    function submitScenario() {
+        const name = document.getElementById('userName').value;
+        if(!name) {
+            alert('성명을 입력해 주세요!');
+            document.getElementById('userName').focus();
+            return;
+        }
+        alert(`${name}님의 PUSH業 진로 시나리오가 성공적으로 저장되었습니다! \n데이터 기반의 맞춤형 교내 사후 케어가 대학일자리플러스센터와 연계되어 시작됩니다.`);
+    }
+</script>
+
+</body>
+</html>
